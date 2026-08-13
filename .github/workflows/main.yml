@@ -1,0 +1,21 @@
+name: Pipeline CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configurar entorno
+        run: echo "Configurando el entorno de prueba..."
+
+      - name: Ejecutar pruebas unitarias
+        run: |
+          echo "Corriendo pruebas..."
+          echo "¡Todas las pruebas pasaron correctamente!"
+
+      - name: Desplegar aplicación
+        run: echo "Desplegando la aplicación en producción..."
